@@ -1,10 +1,46 @@
 
 
 const displayController=(()=>{
-    const alert=(message)=>{
-        document.querySelector("#message").innerHTML=message
+    const alert=(message, title)=>{
+        document.body.innerHTML=document.body.innerHTML+ `
+            <div id="dialogoverlay"></div>
+            <div id="dialogbox" class="slit-in-vertical">
+                <div>  
+                  <div id="dialogboxhead"></div>
+                  <div id="dialogboxbody"></div>
+                  <div id="dialogboxfoot"></div>
+                </div>
+            </div>`
+        
+        let dialogoverlay=document.getElementById("dialogoverlay")
+        let dialogbox= document.getElementById("dialogbox")
+
+        let winH= window.innerHeight
+        dialogoverlay.style.height=winH+"px"
+
+        dialogbox.style.top="100px"
+
+        dialogoverlay.style.display="block"
+        dialogbox.style.display="block"
+
+        document.getElementById("dialogboxhead").style.display="block"
+
+        if(typeof title ==="undefined"){
+            document.getElementById("dialogboxhead").style.display="none"
+        }else{
+            document.getElementById("dialogboxhead").innerHTML=`<i clas="fa fa-exclamation-circle" aria-hidden="true">
+            </i>`+title
+        }
+        document.getElementById("dialogboxbody").innerHTML=message
+        document.getElementById("dialogboxfoot").innerHTML=`<button class="alert-btn"
+            onclick="displayController.ok()"> OK </button>`
     }
-    return {renderMessage}
+    const ok =()=>{
+        document.getElementById("dialogbox").style.display="none"
+        document.getElementById("dialogoverlay").style.display="none"
+        location.reload()
+    }
+    return {alert,ok}
 })()
 
 
@@ -74,10 +110,10 @@ const Game=(()=>{
         
         if(checkForWin(gameBoard.getGameboard(),players[currentPlayerIndex].mark)){
             gameOver=true
-            displayController.renderMessage(`${players[currentPlayerIndex].name} wins !`)
+            displayController.alert(`${players[currentPlayerIndex].name} WINS !!`)
         }else if(checkForTie(gameBoard.getGameboard())){
             gameOver=true
-            displayController.renderMessage("it is a tie!")
+            displayController.alert("it is a tie !")
 
             
         }

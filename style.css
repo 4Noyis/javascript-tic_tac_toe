@@ -1,14 +1,25 @@
+/* 
+color palette
+black bg 1b2223
+light black 3a4f50
+turquoise 0ef6cc
+white f4fefd
+*/
+
+
 
 *{
     padding: 0;
     margin: 0;
     font-family: 'Handjet', cursive;
+    background-color: #1b2223;
 }
 
 .container{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 150px 700px; 
+    color: #f4fefd;
 }
 .header{
     justify-self: center;
@@ -26,13 +37,18 @@
 }
 
 .square{
-    border: 5px inset ;
+    border: 5px inset #0ef6cc;
 ;
     width: 200px;
     height: 200px;
     font-size: 20vh;
     text-align: center;
-
+    color: #3a4f50;
+}
+.square:hover{
+    background-color: #0ef6cc;
+    opacity: .3;
+    transition: 1s;
 }
 .controls{
     display: grid;
@@ -43,6 +59,8 @@ h1{
     font-family: 'Handjet', cursive;
     font-size: 60px;
     font-weight: 900;
+    color: #0ef6cc;
+
 }
 label{
     font-family: 'Handjet', cursive;
@@ -54,12 +72,15 @@ label{
 input{
     width: 200px;
     margin: 5px;
-    border: solid black 1px;
+    border: solid #3a4f50 1px;
     padding: 5px;
     font-family: 'Handjet', cursive;
     font-size: 20px;
     letter-spacing: 0.5px;
-    
+    color: #0ef6cc;
+}
+input:hover{
+    border: solid 1px #0ef6cc;
 }
 button{
     width: 150px;
@@ -67,7 +88,6 @@ button{
     justify-self: center;
     font-family: 'Handjet' , cursive;
     font-size: 30px;
-
     border: none;
     outline: 1px dotted rgb(37, 37, 37);
     outline-offset: -4px;
@@ -77,6 +97,7 @@ button{
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 5px 30px;
+    cursor: pointer;
 }
 button:active {
     box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
@@ -84,12 +105,14 @@ button:active {
 
 .restart-btn{
     justify-self: start;
-
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .start-btn{
     justify-self: end;
-
+    margin-top: 10px;
+    margin-right: 10px;
 }
 #square-0{
     border-top: none;
@@ -120,3 +143,107 @@ button:active {
     border-bottom: none;
     border-right: none;
 }
+
+
+.slit-in-vertical {
+	-webkit-animation: slit-in-vertical 0.45s ease-out both;
+	        animation: slit-in-vertical 0.45s ease-out both;
+}
+
+@-webkit-keyframes slit-in-vertical {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateY(90deg);
+            transform: translateZ(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateY(87deg);
+            transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+            transform: translateZ(0) rotateY(0);
+  }
+}
+@keyframes slit-in-vertical {
+  0% {
+    -webkit-transform: translateZ(-800px) rotateY(90deg);
+            transform: translateZ(-800px) rotateY(90deg);
+    opacity: 0;
+  }
+  54% {
+    -webkit-transform: translateZ(-160px) rotateY(87deg);
+            transform: translateZ(-160px) rotateY(87deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotateY(0);
+            transform: translateZ(0) rotateY(0);
+  }
+}
+
+
+#dialogoverlay{
+    display: none;
+    opacity: .8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #ababab;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  #dialogbox{
+    display: none;
+    position: absolute;
+    background: rgb(144, 144, 144);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.575);
+    transition: 0.3s;
+    width: 40%;
+    z-index: 10;
+    top:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  #dialogbox:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.911);
+  }
+
+  .alert-btn{
+    padding: 0;
+    width: 100px;
+    font-weight: 700;
+
+  }
+  
+  
+  #dialogbox > div{ 
+    background:#FFF; 
+    margin:8px; 
+  }
+  
+  #dialogbox > div > #dialogboxhead{ 
+    background: rgb(68, 68, 68); 
+    font-size:19px; 
+    padding:10px; 
+    color:rgb(255, 255, 255); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  }
+  
+  #dialogbox > div > #dialogboxbody{ 
+    background:rgb(141, 141, 141); 
+    padding:20px; 
+    color:#FFF; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  }
+  
+  #dialogbox > div > #dialogboxfoot{ 
+    background: rgb(148, 148, 148); 
+    padding:10px; 
+    text-align:right; 
+  }
