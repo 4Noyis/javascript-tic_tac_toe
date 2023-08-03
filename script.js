@@ -1,11 +1,13 @@
 
 
 const displayController=(()=>{
-    const renderMessage=(message)=>{
+    const alert=(message)=>{
         document.querySelector("#message").innerHTML=message
     }
     return {renderMessage}
 })()
+
+
 
 const gameBoard= (()=>{
 
@@ -16,6 +18,7 @@ const gameBoard= (()=>{
         gameboard.forEach((square,index)=>{
             boardHTML+=`<div class="square" id="square-${index}">${square}</div>`
         })
+
         document.querySelector(".gameboard").innerHTML=boardHTML
         const squares= document.querySelectorAll(".square")
         squares.forEach((square)=>{
@@ -54,6 +57,8 @@ const Game=(()=>{
         gameOver=false
         gameBoard.render();
     }
+
+
     const handleClick=(event)=>{
         if(gameOver){
             return

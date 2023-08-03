@@ -2,12 +2,13 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Handjet', cursive;
 }
 
 .container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 80px 700px; 
+    grid-template-rows: 100px 150px 700px; 
 }
 .header{
     justify-self: center;
@@ -18,19 +19,104 @@
     display: grid;
     grid-template-columns: 200px 200px 200px;
     grid-template-rows: 200px 200px 200px;
-    gap: 10px;
+    gap: 2px;
     justify-content: center;
     align-content: center;
-    justify-items: center;
+    justify-items: start;
 }
 
 .square{
-    border: 1px solid black;
+    border: 5px inset ;
+;
     width: 200px;
     height: 200px;
     font-size: 20vh;
     text-align: center;
 
-
+}
+.controls{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+h1{
+    font-family: 'Handjet', cursive;
+    font-size: 60px;
+    font-weight: 900;
+}
+label{
+    font-family: 'Handjet', cursive;
+    font-size: 20px;
+    letter-spacing: 3px;
+    justify-self: right;
+    align-self: center;
+}
+input{
+    width: 200px;
+    margin: 5px;
+    border: solid black 1px;
+    padding: 5px;
+    font-family: 'Handjet', cursive;
+    font-size: 20px;
+    letter-spacing: 0.5px;
     
+}
+button{
+    width: 150px;
+    height: 35px;
+    justify-self: center;
+    font-family: 'Handjet' , cursive;
+    font-size: 30px;
+
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    background: hsl(0deg 0% 75%);
+    box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+}
+button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+}
+
+.restart-btn{
+    justify-self: start;
+
+}
+
+.start-btn{
+    justify-self: end;
+
+}
+#square-0{
+    border-top: none;
+    border-left: none;
+}
+#square-1{
+    border-top: none;
+}
+#square-2{
+    border-top: none;
+    border-right: none;
+}
+#square-3{
+    border-left: none;
+
+}
+#square-5{
+    border-right: none;
+}
+#square-6{
+    border-left: none;
+    border-bottom: none;
+}
+#square-7{
+    border-bottom: none;
+}
+#square-8{  
+    border-bottom: none;
+    border-right: none;
 }
