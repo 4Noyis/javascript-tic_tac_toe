@@ -82,6 +82,10 @@ input{
 input:hover{
     border: solid 1px #0ef6cc;
 }
+input:focus{
+    outline: #0ef6cc;
+    border: 1px solid #0ef6cc;
+}
 button{
     width: 150px;
     height: 35px;
@@ -89,18 +93,19 @@ button{
     font-family: 'Handjet' , cursive;
     font-size: 30px;
     border: none;
-    outline: 1px dotted rgb(37, 37, 37);
+    outline: 1px dotted #0ef6cc;
     outline-offset: -4px;
-    background: hsl(0deg 0% 75%);
-    box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+    background: #3a4f50;
+    box-shadow: inset -1px -1px #292929, inset 1px 1px #0ef6cc, inset -2px -2px #3a4f50, inset 2px 2px #3a4f50;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 5px 30px;
     cursor: pointer;
+    color: #0ef6cc;
 }
 button:active {
-    box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+    box-shadow: inset -1px -1px #0ef6cc, inset 1px 1px #292929, inset -2px -2px #0ef6cc, inset 2px 2px #0ef6cc;
 }
 
 .restart-btn{
@@ -190,7 +195,7 @@ button:active {
     position: fixed;
     top: 0px;
     left: 0px;
-    background: #ababab;
+    background: #3a4f50;
     width: 100%;
     z-index: 10;
   }
@@ -198,7 +203,7 @@ button:active {
   #dialogbox{
     display: none;
     position: absolute;
-    background: rgb(144, 144, 144);
+    background: #1b2223;
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.575);
     transition: 0.3s;
@@ -236,14 +241,15 @@ button:active {
   }
   
   #dialogbox > div > #dialogboxbody{ 
-    background:rgb(141, 141, 141); 
+    font-family: 'Handjet',cursive;
+    background:#1b2223; 
     padding:20px; 
-    color:#FFF; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    color:#0ef6cc; 
+    font-size: 30px;
   }
   
   #dialogbox > div > #dialogboxfoot{ 
-    background: rgb(148, 148, 148); 
+    background: #1b2223; 
     padding:10px; 
     text-align:right; 
   }

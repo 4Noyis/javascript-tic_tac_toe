@@ -121,6 +121,9 @@ const Game=(()=>{
     }
 
     const restart=()=>{
+        if(gameBoard.getGameboard()[1]===""){
+            return
+        }
         for (let i = 0; i < 9; i++) {
             gameBoard.update(i,"")
         }
